@@ -1,0 +1,132 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+    font-family:sans-serif;
+}
+
+.start-game {
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    text-align:center;
+    padding-top:250px;
+    z-index:999;
+    background-color:darkslategray;
+}
+
+.start-game h1 {
+    color:#fff;
+    font-size:2.5rem;
+    font-weight:900;
+    margin-bottom:20px;
+}
+
+.start-btn,.submit-btn {
+    text-align:center;
+    font-size:1.1rem;
+    font-weight:400;
+    padding:.4em 1.5em;
+    border:none;
+    border-radius:4px;
+    color:#fff;
+    background-color:cadetblue;
+    cursor:pointer;
+    transition: .16s linear;
+}
+
+.container {
+    width:100%;
+    height:100vh;
+    background-color:whitesmoke;
+    display:grid;
+    grid-template-columns:20% 60% 20%;
+}
+
+.questions-number-container 
+, .timer-container  {
+    justify-self: center;
+    padding-top:30px;
+}
+
+.timer {
+    display:flex;
+    font-weight:200;
+}
+
+.questions-container {
+    justify-self: center;
+    padding-top:220px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+}
+
+.questions-container h2 {
+    font-weight:800;
+}
+
+#solution-grabber {
+    padding:8px 0;
+    border-radius:30px;
+    font-size:1.2rem;
+    text-align:center;
+    border:1px solid;
+    outline:none;
+}
+
+.submit-btn {
+    background-color:darkslategray;
+}
+
+.submit-btn:hover,.start-btn:hover {
+    opacity:.8;
+}
+
+.result {
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:999;
+    display:none;
+    flex-direction:column;
+    align-items: center;
+    gap:20px;
+    padding-top:150px;
+    background-color:#fff;
+}
+
+.result div {
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    gap:10px;
+}
+
+.result div h3 {
+    font-weight:300;
+}
+
+.result div button {
+    border:1px solid;
+    padding:.4em 1.5em;
+    border-radius:30px;
+    font-size:1.05rem;
+    font-weight:500;
+    background:transparent;
+    cursor:pointer;
+    transition: .1s linear;
+}
+
+
+.result div button:hover {
+    background-color:rgb(34, 34, 34);
+    color:#fff;
+}

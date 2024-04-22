@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Problems Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="start-game">
+        <h1>Start the game!</h1>
+        <button class="start-btn">Start</button>
+    </div>
+    <div class="container">
+        <div class="timer-container">
+            <h2 class="timer">
+                <span class="mins">00</span>
+                <span>:</span>
+                <span class="secs">00</span>
+            </h2>
+        </div>
+        <div class="questions-container">
+            <h2 class="question-heading">QUESTION <span class="questions-number">1</span></h2>
+            <h3 class="question">17X12</h3>
+            <input type="text" id="solution-grabber" required>
+            <button class="submit-btn">Submit</button>
+        </div>
+        <div class="questions-number-container">
+            <h2><span class="questions-number">1</span>/20</h2>
+        </div>
+    </div>
+    <div class="result">
+        <div class="result-stats">
+            <h2>Errors:</h2>
+            <h3 class="wrong-answers">5</h3>
+            <button class="view-results">View results</button>
+        </div>
+        <div class="time-stats">
+            <h2>Final time</h2>
+            <h3 class="time">02:22</h3>
+            <button class="try-again">Try again</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
