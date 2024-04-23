@@ -12,6 +12,9 @@ const answers = [];
 let wrongAnswers = 0;
 const resultBoard = document.querySelector('.result');
 const tryAgainBtn = document.querySelector('.try-again');
+const viewResultsBtn = document.querySelector('.view-results');
+const questionsOverview = document.querySelector('.questions-overview');
+const backBtn = document.querySelector('.back-btn');
 
 
 //View
@@ -82,7 +85,34 @@ function tryAgain(){
     resultBoard.style.display = 'none';
 }
 
+function overviewQuestions(){
+    answers.forEach(answer=>{
+        const questionContainer = document.createElement('div');
+        const questionContainerHTML = `
+        <h2 class="question-heading">${answer.numOfQuestion}</h2>
+        <h3 class="question">${answer.question} = ${answer.answer}</h3>
+        `;
+
+        if(eval(answer.question) !== Number(answer.answer)){
+            questionContainer.classList.add('wrong-answer');
+        }
+
+        questionContainer.innerHTML = questionContainerHTML;
+        questionsOverview.appendChild(questionContainer);
+        questionsOverview.style.display = 'flex';
+        resultBoard.style.display = 'none';
+        
+    });
+}
+
+function backToBoard() {
+    questionsOverview.style.display = 'none';
+    resultBoard.style.display = 'flex';
+}
+
 //Controller
 startBtn.addEventListener('pointerup', startGame);
 submitBtn.addEventListener('pointerup', submitAnswer);
 tryAgainBtn.addEventListener('pointerup', tryAgain);
+viewResultsBtn.addEventListener('pointerup', overviewQuestions);
+backBtn.addEventListener('pointerup', backToBoard);
