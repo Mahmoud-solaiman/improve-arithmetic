@@ -8,7 +8,7 @@ let secs = document.querySelector('.secs');
 const submitBtn = document.querySelector('.submit-btn');
 const questionsNumbers = document.querySelectorAll('.questions-number');
 const question = document.querySelector('.question');
-const answers = [];
+let answers = [];
 let wrongAnswers = 0;
 const resultBoard = document.querySelector('.result');
 const tryAgainBtn = document.querySelector('.try-again');
@@ -76,6 +76,7 @@ function submitAnswer(){
 }
 
 function tryAgain(){
+    answers = [];
     wrongAnswers = 0;
     mins.textContent = '00';
     secs.textContent = '00';
@@ -83,6 +84,10 @@ function tryAgain(){
         questionsNumber.textContent = 1;
     });
     resultBoard.style.display = 'none';
+    
+    questionsOverview.querySelectorAll('div').forEach(div=>{
+        div.remove();
+    });
 }
 
 function overviewQuestions(){
@@ -92,13 +97,19 @@ function overviewQuestions(){
         <h2 class="question-heading">${answer.numOfQuestion}</h2>
         <h3 class="question">${answer.question} = ${answer.answer}</h3>
         `;
-
-        if(eval(answer.question) !== Number(answer.answer)){
-            questionContainer.classList.add('wrong-answer');
-        }
-
         questionContainer.innerHTML = questionContainerHTML;
         questionsOverview.appendChild(questionContainer);
+
+        if(eval(answer.question) !== Number(answer.answer)){
+            const rightAnswer = document.createElement('h4');
+            rightAnswer.textContent = `Right answer is ${eval(answer.question)}`;
+            rightAnswer.classList.add('right-answer');
+            questionContainer.appendChild(rightAnswer);
+            questionContainer.classList.add('wrong-answer');
+        } else {
+            questionContainer.classList.add('right-answer');
+        }
+
         questionsOverview.style.display = 'flex';
         resultBoard.style.display = 'none';
         
