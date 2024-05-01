@@ -26,6 +26,10 @@ body {
     margin-bottom:20px;
 }
 
+.difficulty-level-container {
+    padding-bottom:30px;
+}
+
 .start-btn,.submit-btn {
     text-align:center;
     font-size:1.1rem;
@@ -71,7 +75,7 @@ body {
     font-weight:800;
 }
 
-#solution-grabber {
+#solution-grabber, #difficulty-level {
     padding:8px 0;
     border-radius:30px;
     font-size:1.2rem;
